@@ -1,0 +1,19 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: consumer
+
+ribbon:
+  ReadTimeout: 80000
+  ConnectTimeout: 80000
